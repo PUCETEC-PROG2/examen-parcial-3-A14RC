@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Información del Artista</h1>
+<h2>{{ object.nombre }}</h2>
+<p>{{ object.descripcion }}</p>
+<a class="btn btn-primary mt-3" href="{% url 'artista-list' %}">Volver a la Lista</a>
+<a class="btn btn-custom mt-3" href="{% url 'album-by-artista-list' object.pk %}"><i class="fas fa-music"></i> Ver Álbumes del Artista</a>
+{% endblock %}

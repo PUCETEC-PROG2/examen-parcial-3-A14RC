@@ -1,0 +1,7 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Bienvenido al Catálogo de Discos de Música</h1>
+<a class="btn btn-custom mt-3" href="{% url 'artista-list' %}"><i class="fas fa-users"></i> Ver Artistas</a>
+<a class="btn btn-custom mt-3" href="{% url 'album-list' %}"><i class="fas fa-music"></i> Ver Álbumes</a>
+{% endblock %}

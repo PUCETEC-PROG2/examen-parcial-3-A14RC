@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Álbumes de {{ artista.nombre }}</h1>
+<ul class="list-group">
+    {% for album in object_list %}
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+            <a href="{% url 'album-detail' album.pk %}">{{ album.titulo }}</a>
+            <div>
+                <a class="btn btn-sm btn-primary" href="{% url 'album-update' album.pk %}"><i class="fas fa-edit"></i> Editar</a>
+                <a class="btn btn-sm btn-danger" href="{% url 'album-delete' album.pk %}"><i class="fas fa-trash-alt"></i> Eliminar</a>
+            </div>
+        </li>
+    {% endfor %}
+</ul>
+<a class="btn btn-secondary mt-3" href="{% url 'artista-detail' artista.pk %}"><i class="fas fa-arrow-left"></i> Regresar a Información del Artista</a>
+{% endblock %}
